@@ -3,7 +3,7 @@ class Config:
     '''
     General configuration parent class
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:mzinge@localhost/blog'
+    pass#
 
 
 class ProdConfig(Config):
@@ -16,7 +16,6 @@ class ProdConfig(Config):
     pass
 
 
-
 class DevConfig(Config):
     '''
     Development  configuration child class
@@ -24,7 +23,6 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://user:newa$um0ney@localhost/blog'
 
     DEBUG = True
 
