@@ -1,5 +1,5 @@
 from app import create_app, db
-from app.models import User
+from app.models import User,Role
 from flask_script import Manager,Server
 
 #Creating app instance
@@ -9,8 +9,7 @@ manager = Manager(app)
 
 @manager.shell
 def make_shell_sontext():
-    return dict(app = app,db = db,User = User)
-
+    return dict(app = app,db = db,User = User, Role = Role )
 if __name__=='__main__':
     app.secret_key = 'kadweka'
     manager.run()
