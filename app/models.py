@@ -12,7 +12,6 @@ def load_user(user_id):
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
-
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255),index = True)
     email = db.Column(db.String(255),unique = True,index = True)
@@ -45,4 +44,4 @@ class Role(db.Model):
     users = db.relationship('User',backref = 'role',lazy="dynamic")
 
     def __repr__(self):
-        return f'User {self.name}'
+        return f'User {self.username}'
