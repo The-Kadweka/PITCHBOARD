@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to PEATCHBOARD
+WE ARE GLAD TO HAVE YOU SIGNED INTO OUR Pitch

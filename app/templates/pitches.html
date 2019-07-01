@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+</head>
+<div classs='container-fluid'>
+<div class="bg-img">
+
+<section>
+  <div class="row">
+  <div class="col-md-4"> <h1>Pitch</h1>
+          {{Pitch.Pitch}} </div>
+        <div class="col-md-4">
+
+          <h1> Comment Your Pitch</h1>
+                 {{ wtf.quick_form(Pitchform) }}
+
+          {{simplemde.load}}
+
+          </div>
+       <div class="col-md-4 container-fluid">
+
+         {% for Pitchcomments in Pitchcomments %}
+             <blockquote>{{Pitchcomments.Pitchcom}}
+<a href="#"><span class=" glyphicon glyphicon-thumbs-up"></span></a> &nbsp; <a href="#"><span class="glyphicon glyphicon-thumbs-down"></span></a>
+        </blockquote>
+         {% endfor %}
+
+ </div>
+</section>
+
+</div>
+</div>
+</div>
+
+
+{% endblock %}
