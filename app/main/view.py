@@ -24,7 +24,7 @@ def pitch():
         db.session.commit()
         return redirect(url_for('.allpitches'))
 
-    return render_template("pitch.html", title = title, pitchesform= form)
+    return render_template("profile.html", title = title, pitchesform= form)
 
 
 @main.route('/pitch/<int:id>',  methods=['GET', 'POST'])

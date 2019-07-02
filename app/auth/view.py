@@ -30,7 +30,7 @@ def register():
         db.session.commit()
         # session.permanent = True
         mail_message("Welcome to watchlist","email/welcome_user",user.email,user=user)
-        return redirect(url_for('.login'))
+        return redirect(url_for('auth.login'))
         flash('SUccesfully register please proceed to login')
 
     title = "New Account created"
