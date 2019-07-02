@@ -11,7 +11,7 @@
               <li><a href="/">Home</a></li>
               </ul>
               <ul class="nav navbar-nav">
-                  <li><a href=".html">create</a></li>
+                  <li><a href="{{url_for('auth.login')}}">create</a></li>
                   </ul>
 
 
@@ -20,7 +20,7 @@
            <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
 
 
-      <li><a href="{{url_for('auth.logout')}}"><<span></span> Sign out </a></li>
+      <li><a href="{{url_for('auth.logout')}}">Sign out </a></li>
       {% else %}
       <li><a href="{{url_for('auth.login')}}">Sign in </a></li>
       {% endif %}
