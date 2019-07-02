@@ -46,7 +46,7 @@ def pitchid(id):
 def allpitches():
     title = 'all pitches'
     pitches = Pitch.query.order_by(Pitch.id).all()
-    return render_template("bio.html", title=title, pitch=pitch )
+    return render_template("about.html", title=title, pitch=pitch )
 
 
 @main.route('/user/<uname>')
@@ -70,7 +70,7 @@ def update_profile(uname):
     form = UpdateProfile()
 
     if form.validate_on_submit():
-        user.bio = form.bio.data
+        user.about = form.about.data
 
         db.session.add(user)
         db.session.commit()

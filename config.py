@@ -1,16 +1,16 @@
+
 import os
+
 class Config:
     '''
     General configuration parent class
     '''
     pass
     # simple mde  configurations
-    SIMPLEMDE_JS_IIFE = True
-    SIMPLEMDE_USE_CDN = True
 
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/pitch_list'
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+
 
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -27,12 +27,12 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/blog'
+    # SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/peatch_test'
-
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/blog_test'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevConfig(Config):
     '''

@@ -7,8 +7,6 @@ from . import login_manager
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
-
-
     id = db.Column(db.Integer,primary_key = True)
     username = db.Column(db.String(255))
     email=db.Column(db.String(255),unique=True,index=True)
@@ -17,7 +15,7 @@ class User(UserMixin,db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pitch = db.relationship('Pitch', backref='user', lazy='dynamic')
-    pitchcom = db.relationship('PtchCom', backref='user', lazy='dynamic')
+    pitchcom = db.relationship('PitchCom', backref='user', lazy='dynamic')
     @property
     def password(self):
         raise AttributeError('You can`t see this')
