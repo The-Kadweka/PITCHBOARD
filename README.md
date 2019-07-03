@@ -31,7 +31,6 @@ ___BY: HUSSEIN KADWEKA __
 
 ### __CONTACTS DETAILS__
 > husseinydevy@gmail.com
+> 0772328059
 
-
-> 0772328059[MTI]
-[MTI] (https://github.com/hussein18149/PITCHBOARD/blob/master/LICENSE)
+[MTI](https://github.com/hussein18149/PITCHBOARD/blob/master/LICENSE)
