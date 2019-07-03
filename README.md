@@ -15,19 +15,22 @@ ___BY: HUSSEIN KADWEKA __
 
 ### __TECHNOLOGIES USED__
 > 1. PYTHON3.6.6
-> 2. HTML 
+> 2. HTML
 > 3. FLASK
 > 4. BOOTSTRAP
 
 ***
 ### __DEPLOYMENT TO HEROKU__
 1. heroku create <name-of-app>
-3. heroku config:set SECRET_KEY=<YOUR SECRET KEY>
-4. git add .
-5. git commit -m "deployment to heroku"
-6. git push heroku master
+3. heroku config:set GMAIL-ACCOUNT=<gmail username>
+4. heroku configure: set GMAIL-PASSWORD=<password>
+6. git add .
+7. git commit -m "deployment to heroku"
+8. git push heroku master
 
 
 ### __CONTACTS DETAILS__
 > husseinydevy@gmail.com
-> 0772328059 
+
+
+> 0772328059[MTI] (https://github.com/hussein18149/PITCHBOARD/blob/master/LICENSE)
