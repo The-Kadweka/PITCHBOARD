@@ -24,9 +24,9 @@ ___BY: HUSSEIN KADWEKA __
 1. heroku create <name-of-app>
 3. heroku config:set GMAIL-ACCOUNT=<gmail username>
 4. heroku configure: set GMAIL-PASSWORD=<password>
-6. git add .
-7. git commit -m "deployment to heroku"
-8. git push heroku master
+5. git push heroku master
+6.heroku run python3.6 manage.py db upgrade
+
 
 
 ### __CONTACTS DETAILS__
@@ -34,3 +34,4 @@ ___BY: HUSSEIN KADWEKA __
 > 0772328059
 
 [MTI](https://github.com/hussein18149/PITCHBOARD/blob/master/LICENSE)
++ This is my lincense to all people who want to make use of my application
