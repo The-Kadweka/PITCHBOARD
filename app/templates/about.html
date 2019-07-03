@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
-
-
 {% block content %}
 
 </head>
-
-
 <div classs='container-fluid'>
 <div class="bg-img">
   <div class="row">
@@ -13,9 +9,9 @@
   <div class="col-md-2"> </div>
 
         <div class="col-md-8">
-<a href="/pitch/" >Write a Pitch</a></br>
+<a href="/pitch" >Write a Pitch</a> <br><hr>
             <h1>All the pitches posted</h1>
-  {% for pitch in pitches %}
+  {% for pitch in pitch %}
 <blockquote>
 {{pitch.pitch}}
 </blockquote>

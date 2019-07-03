@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
-
 {% block content %}
-</head>
 <div classs='container-fluid'>
 <div class="bg-img">
   <div class="row">
-  <div class="col-md-4"> <h1>Pitch</h1>
-          {{pitch.pitch}} </div>
+  <div class="col-md-4">
+     <h1>Pitch</h1>
+        <p> {{pitch.pitch}}</p>
+        </div>
         <div class="col-md-4">
 
-          <h1> Comment Your Pitch</h1>
-                 {{ wtf.quick_form(Pitchform) }}
+          {{wtf.quick_form(PitchForm)}}
 
           </div>
        <div class="come">
 
-         {% for Pitchcomments in Pitchcomments %}
-             <blockquote>{{Pitchcomments.Pitchcom}}
+         {% for comments in comments %}
+             <blockquote>{{comments.comments}}
 <a href="#"><a href="#"></a>
         </blockquote>
          {% endfor %}

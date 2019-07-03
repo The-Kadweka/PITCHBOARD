@@ -4,7 +4,7 @@ from ..models import User, Pitch, PitchCom
 from .. import db,photos
 from flask_login import login_required, current_user
 from .form import *
-import markdown2
+# import markdown2
 
 
 @main.route('/')
@@ -15,39 +15,37 @@ def index():
 @main.route('/pitch', methods = ['GET','POST'])
 @login_required
 def pitch():
-    form = logForm()
+    form = PitchForm()
     title = 'The Pitches'
     if form.validate_on_submit():
-        new_pitch = Pitch(pich=form.pitch.data, user_id=current_user.id)
+        new_pitch = Pitch(pitch=form.pitch.data, user_id=current_user.id)
 
         db.session.add(new_pitch)
         db.session.commit()
         return redirect(url_for('.allpitches'))
 
-    return render_template("profile.html", title = title, pitchesform= form)
+    return render_template("pitch.html", title = title, PitchForm= form)
 
 
-@main.route('/pitch/<int:id>',  methods=['GET', 'POST'])
+@main.route('/pitch/<int:id>',methods=['GET', 'POST'])
 @login_required
 def pitchid(id):
-
-    pitch = pitch.query.get(id)
-    form = PitchComForm()
+    form = pitchcom()
+    pitch = Pitch.query.get(id)
     if form.validate_on_submit():
-        pitchcom = form.peatchcom.data
-        new_pitchcom = PitchCom(pitchcom=pitchcom, pitch_id=id, user=current_user)
-        new_pitchcom.save_peatchcom()
+        pitchcom = form.pitchCom.data
+        new_pitchcom = PitchCom(pitchCom=pitchcom, pitch_id=id, user=current_user)
+        new_pitchcom.save_pitchcom()
 
-    pitcom = PitchCom.query.filter_by(pitch_id=id).all()
-    return render_template('pitches.html',pitchsform=form )
+    pitchcom = PitchCom.query.filter_by(pitch_id=id).all()
+    return render_template('pitches.html',PitchForm=form,comments = pitchcom,pitch=pitch )
 
 @main.route('/pitches')
 @login_required
 def allpitches():
     title = 'all pitches'
-    pitches = Pitch.query.order_by(Pitch.id).all()
+    pitch = Pitch.query.order_by(Pitch.id).all()
     return render_template("about.html", title=title, pitch=pitch )
-
 
 @main.route('/user/<uname>')
 @login_required

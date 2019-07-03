@@ -52,7 +52,6 @@ class PitchCom(db.Model):
     Pitchcom = db.Column(db.String(255))
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     pitch_id = db.Column(db.Integer, db.ForeignKey("pitch.id"))
-
     def save_pitchcom(self):
         db.session.add(self)
         db.session.commit()

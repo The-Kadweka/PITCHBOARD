@@ -28,10 +28,9 @@ def register():
         user = User(email = form.email.data, username = form.username.data, password = form.password.data)
         db.session.add(user)
         db.session.commit()
-        # session.permanent = True
-        mail_message("Welcome to watchlist","email/welcome_user",user.email,user=user)
-        return redirect(url_for('auth.login'))
-        flash('SUccesfully register please proceed to login')
+        mail_message("Welcome to pitchboard","email/welcome_user",user.email,user=user)
+        return redirect(url_for('.login'))
+        flash('Succesfully register please proceed to login')
 
     title = "New Account created"
     return render_template('auth/register.html', title = title, registration_form = form)
