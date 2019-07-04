@@ -3,7 +3,7 @@ from . import main
 from ..models import User, Pitch, PitchCom
 from .. import db,photos
 from flask_login import login_required, current_user
-from .form import *
+from .form import PitchComForm,PitchForm,UpdateProfile
 # import markdown2
 
 
@@ -30,15 +30,15 @@ def pitch():
 @main.route('/pitch/<int:id>',methods=['GET', 'POST'])
 @login_required
 def pitchid(id):
-    form = pitchcom()
+    form = PitchComForm()
     pitch = Pitch.query.get(id)
+    print(pitch)
     if form.validate_on_submit():
-        pitchcom = form.pitchCom.data
-        new_pitchcom = PitchCom(pitchCom=pitchcom, pitch_id=id, user=current_user)
+        pitch = form.pitchcom.data
+        new_pitchcom = PitchCom(Pitchcom=pitch, pitch_id=id, user=current_user)
         new_pitchcom.save_pitchcom()
-
-    pitchcom = PitchCom.query.filter_by(pitch_id=id).all()
-    return render_template('pitches.html',PitchForm=form,comments = pitchcom,pitch=pitch )
+    pitchuz = PitchCom.query.filter_by(pitch_id=id).all()
+    return render_template('pitches.html',PitchForm=form,comments = pitchuz,pitch=pitch )
 
 @main.route('/pitches')
 @login_required

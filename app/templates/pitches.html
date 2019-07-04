@@ -13,12 +13,13 @@
 
           </div>
        <div class="come">
-
-         {% for comments in comments %}
-             <blockquote>{{comments.comments}}
-<a href="#"><a href="#"></a>
-        </blockquote>
+         {%if comments%}
+         {% for comment in comments %}
+            <p>{{comment.Pitchcom}}</p>
          {% endfor %}
+         {%else%}
+         <p>Pich has no comment</p>
+         {%endif%}
 
  </div>
 

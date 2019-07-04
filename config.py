@@ -5,7 +5,8 @@ class Config:
     '''
     General configuration parent class
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/pitch'
+
     # simple mde  configurations
 
     UPLOADED_PHOTOS_DEST ='app/static/photos'
@@ -27,12 +28,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/pitch'
-    SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
-    
-class TestConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:kadweka@localhost/blog_test'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    pass
 
 class DevConfig(Config):
     '''
@@ -48,5 +44,4 @@ class DevConfig(Config):
 config_options = {
 'development':DevConfig,
 'production':ProdConfig,
-'test':TestConfig
 }
