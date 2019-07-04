@@ -21,6 +21,7 @@ def login():
         session.permanent = True
     title = "Login"
     return render_template('auth/login.html', title = title, login_form = login_form)
+
 @auth.route('/register', methods = ["GET", "POST"])
 def register():
     form = RegistrationForm()
